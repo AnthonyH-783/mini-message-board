@@ -4,6 +4,7 @@ const logger = require("morgan");
 const path = require("path");
 const createError = require("http-errors");
 require("dotenv").config();
+
 // Importing Routes
 const indexRouter = require("./routes/index");
 const messageRouter = require("./routes/newMessage");
@@ -23,7 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Setting up custom router
 app.use("/", indexRouter);
-app.use("new", messageRouter);
+app.use("/new", messageRouter);
 
 // Catching errors and unhandled requests
 

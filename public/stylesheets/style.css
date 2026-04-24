@@ -1,6 +1,77 @@
+:root{
+  --background: #c8d8c2;
+  --border: #a0bc99;
+  --text-primary: #121d11;
+  --text-secondary: #85a77e;
+  --white: #f3f3f3;
+
+}
+
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background);
+  font-family: "Inter", sans-serif;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header h1 {
+  font-size: 3rem;
+}
+header h1 span{
+  color: #61815f;
+}
+header>span{
+  margin-top: -1rem;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.msg-thread{
+  background-color: var(--white);
+  border-color: var(--border);
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content:start;
+  padding: 1.5rem;
+  min-height: 50vh;
+  margin-top: 1rem;
+
+}
+.thread-name{
+  font-weight: 300;
+  color:#3d6338;
+  letter-spacing: 0.1ch;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2rem;
+  text-decoration-color: var(--text-secondary);
+}
+.add-btn{
+  align-self: end;
+  display: flex;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background-color: #3d6338;
+  color: white;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: baseline;
+  gap: 0.2rem;
+  width: 4rem;
+  height: 2rem;
+  
 }
 
 a {

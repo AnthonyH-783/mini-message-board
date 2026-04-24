@@ -3,10 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/comment.css">
+    <title>Message Board</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <header>
+        <h1><span>Mini </span>Message Board</h1>
+        <span><i>A place to post public messages</i></span>
+    </header>
+
+    <main>
+        <h2 class="thread-name">LATEST DISCUSSIONS</h2>
+        <button class="add-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+            <span>Post</span>
+
+        </button>
+        <div class="msg-thread">
+
+            <% messages.map((message) => { %>
+
+                <%-include("comment", {message})%>
+
+            <% }); %>
+            
+        </div>
+        
+    </main>
     
 </body>
 </html>
