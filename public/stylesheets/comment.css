@@ -1,0 +1,42 @@
+.comment{
+    display: flex;
+    align-items: baseline;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    position: relative;
+}
+.svg-container{
+    position: relative;
+    padding-right: 0.4rem;
+    top: 0.3rem;
+}
+.top-text{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.time-info, .dot{
+    font-size: 0.8rem;
+    color: rgb(146, 144, 144);
+}
+.comment-text{
+    flex: 3;
+}
+
+.details{
+    align-self:flex-end;
+    display: flex;
+    font-size: 0.8rem;
+    cursor: pointer;
+    background-color: #85a77e;
+    color: white;
+    
+    border: none;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: baseline;
+    gap: 0.2rem;
+    width: 5rem;
+    height: 2rem;
+}

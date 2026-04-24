@@ -1,3 +1,4 @@
+const {parseMessages} = require("../public/javascripts/messageParser");
 const express = require('express');
 const router = express.Router();
 
@@ -17,7 +18,8 @@ const messages = [
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {messages: messages});
+  const parsedMessages = parseMessages(messages);
+  res.render('index', {messages: parsedMessages});
 });
 
 module.exports = router;
