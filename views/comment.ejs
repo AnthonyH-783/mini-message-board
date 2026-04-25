@@ -18,5 +18,8 @@ Take the following variables: User, text, date
     </div>
 
 </div>
-<button class="details">See details</button>
+<% const link = `/messages/${message.index}`; %>
+<a href="<%=link%>">
+    <button class="details">See details</button>
+</a>
 </div>

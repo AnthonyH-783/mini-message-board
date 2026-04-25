@@ -31,6 +31,11 @@ router.post("/new", function(req, res){
   const newMessage = Object.assign({added: new Date()}, req.body);
   messages.push(newMessage);
   res.redirect("/");
+});
+
+router.get("/messages/:index", function(req, res){
+  const index = req.params.index;
+  res.render("details", {message: messages[index]});
 })
 
 module.exports = router;
