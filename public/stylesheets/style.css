@@ -54,6 +54,11 @@ main form{
   margin-top: 1rem;
 
 }
+.thread-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .thread-name{
   font-weight: 300;
   color:#3d6338;
