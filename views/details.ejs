@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/details.css">
+    <title>Message Details</title>
+</head>
+<body>
+    <div class="msg-details">
+        <h1>Message Details</h1>
+        <p><%=message.text%></p>
+        <div class="about">
+            <cite>Posted by <%=message.user%></cite>
+            <span><%=message.added%></span>
+        </div>
+        <a href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="##121d11"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
+        </a>
+    </div>
+    
+</body>
+</html>
