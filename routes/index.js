@@ -17,9 +17,20 @@ const messages = [
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   const parsedMessages = parseMessages(messages);
   res.render('index', {messages: parsedMessages});
 });
+
+router.get("/new", function(req, res){
+  res.render("newMessage");
+});
+
+router.post("/new", function(req, res){
+  
+  const newMessage = Object.assign({added: new Date()}, req.body);
+  messages.push(newMessage);
+  res.redirect("/");
+})
 
 module.exports = router;

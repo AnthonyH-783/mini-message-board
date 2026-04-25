@@ -7,7 +7,24 @@
     <title>New Message</title>
 </head>
 <body>
-    <h1>New Message Page</h1>
+    <form action="/new" method="post">
+        <h3>Post a Message</h3>
+        <div class="form-entry">
+            <label for="user">Name</label>
+            <input required type="text" name="user">
+        </div>
+
+        <div class="form-entry">
+            <label for="text">Message</label>
+            <textarea required name="text"></textarea>
+        </div>
+
+        <button class="post-btn" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
+            <span>Post</span>
+        </button>
+
+    </form>
     
 </body>
 </html>

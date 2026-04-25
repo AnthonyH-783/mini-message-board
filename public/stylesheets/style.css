@@ -38,6 +38,9 @@ main{
   flex-direction: column;
   width: 80%;
 }
+main form{
+  align-self: flex-end;
+}
 .msg-thread{
   background-color: var(--white);
   border-color: var(--border);
@@ -72,8 +75,7 @@ main{
   justify-content: baseline;
   gap: 0.2rem;
   width: 4rem;
-  height: 2rem;
-  
+  height: 2rem; 
 }
 
 a {

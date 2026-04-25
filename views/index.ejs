@@ -18,11 +18,13 @@
 
     <main>
         <h2 class="thread-name">LATEST DISCUSSIONS</h2>
-        <button onclick="location.href='http://localhost:8080/new'" class="add-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
-            <span>Post</span>
+        <form action="/new" method="get">
+            <button type="submit" class="add-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                <span>Post</span>
+            </button>
+        </form>
 
-        </button>
         <div class="msg-thread">
 
             <% messages.map((message) => { %>
@@ -34,6 +36,8 @@
         </div>
         
     </main>
+
+    <form method="modal"></form>
     
 </body>
 </html>
