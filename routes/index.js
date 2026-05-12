@@ -1,6 +1,7 @@
 const {parseMessages} = require("../public/javascripts/messageParser");
 const express = require('express');
 const router = express.Router();
+const db = require("../db/queries");
 
 const messages = [
   {
@@ -17,7 +18,8 @@ const messages = [
 
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/', async function(req, res) {
+  const messages = await db.getAllMessages();
   const parsedMessages = parseMessages(messages);
   res.render('index', {messages: parsedMessages});
 });

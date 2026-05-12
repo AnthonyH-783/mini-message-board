@@ -2,10 +2,9 @@ const { formatDistance } = require("date-fns");
 
 function parseMessages(messages){
     const currentDate = new Date();
-    const parsed = messages.map((message, index) => ({
+    const parsed = messages.map((message) => ({
         ...message,
-        index,
-        added: formatDistance(currentDate, message.added) + " ago"
+        date: formatDistance(currentDate, message.date) + " ago"
     }));
 
     return parsed;

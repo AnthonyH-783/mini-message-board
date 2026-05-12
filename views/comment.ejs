@@ -9,16 +9,16 @@ Take the following variables: User, text, date
     </div>
     <div class="comment-text">
     <div class="top-text">
-        <span><%=message.user%></span>
+        <span><%=message.username%></span>
         <span class="dot">&#9679;</span>
-        <span class="time-info"><%=message.added%></span>
+        <span class="time-info"><%=message.date%></span>
     </div>
     <div class="bottom-text">
-        <p><%=message.text%></p>
+        <p><%=message.message%></p>
     </div>
 
 </div>
-<% const link = `/messages/${message.index}`; %>
+<% const link = `/messages/${message.id}>`; %>
 <a href="<%=link%>">
     <button class="details">See details</button>
 </a>
