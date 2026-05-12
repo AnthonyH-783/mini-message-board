@@ -3,19 +3,6 @@ const express = require('express');
 const router = express.Router();
 const db = require("../db/queries");
 
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date()
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date()
-  }
-];
-
 
 /* GET home page. */
 router.get('/', async function(req, res) {
@@ -28,16 +15,18 @@ router.get("/new", function(req, res){
   res.render("newMessage");
 });
 
-router.post("/new", function(req, res){
+router.post("/new", async function(req, res){
   
-  const newMessage = Object.assign({added: new Date()}, req.body);
-  messages.push(newMessage);
+  const newMessage = Object.assign({date: new Date()}, req.body);
+  await db.addMessage(newMessage);
   res.redirect("/");
 });
 
-router.get("/messages/:index", function(req, res){
+router.get("/messages/:index", async function(req, res){
   const index = req.params.index;
-  res.render("details", {message: messages[index]});
+  const message = await db.getMessageById(index);
+  console.log(message);
+  res.render("details", {message});
 })
 
 module.exports = router;
