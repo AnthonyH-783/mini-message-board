@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/form.css">
+    <link rel="stylesheet" href="stylesheets/formError.css">
     <title>New Message</title>
 </head>
 <body>
+    <% if(locals.errors) { %>
+        <%- include("formError", {errors: errors}) %>
+        <% } %>
+    
     <form action="/new" method="post">
         <h3>Post a Message</h3>
         <div class="form-entry">

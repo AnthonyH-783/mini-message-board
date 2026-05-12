@@ -1,32 +1,19 @@
-const {parseMessages} = require("../public/javascripts/messageParser");
 const express = require('express');
 const router = express.Router();
 const db = require("../db/queries");
+const messageController = require("../controllers/messageController");
 
 
-/* GET home page. */
-router.get('/', async function(req, res) {
-  const messages = await db.getAllMessages();
-  const parsedMessages = parseMessages(messages);
-  res.render('index', {messages: parsedMessages});
-});
+// Home Page
+router.get('/', messageController.getIndex);
 
-router.get("/new", function(req, res){
-  res.render("newMessage");
-});
+// Getting message submission form
+router.get("/new", messageController.messageFormGet);
 
-router.post("/new", async function(req, res){
-  
-  const newMessage = Object.assign({date: new Date()}, req.body);
-  await db.addMessage(newMessage);
-  res.redirect("/");
-});
+// Adding new messssages
+router.post("/new", messageController.messageFormPost);
 
-router.get("/messages/:index", async function(req, res){
-  const index = req.params.index;
-  const message = await db.getMessageById(index);
-  console.log(message);
-  res.render("details", {message});
-})
+// Looking up message details
+router.get("/messages/:id", messageController.messageDetailsGet);
 
 module.exports = router;

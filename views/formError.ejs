@@ -1,0 +1,9 @@
+<!-- Form Error View-->
+<div id="error-div">
+    <span>Please make sure the form meets the following: </span>
+    <ul>
+        <% errors.map((error) => { %>
+            <li><%=error.msg%></li>
+        <% }); %>
+    </ul>
+</div>

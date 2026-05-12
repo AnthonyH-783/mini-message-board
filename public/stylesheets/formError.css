@@ -1,0 +1,9 @@
+#error-div{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 12px;
+    background-color: rgba(198, 2, 2, 0.797);
+    color: white;
+    margin-bottom: 1rem;
+}
